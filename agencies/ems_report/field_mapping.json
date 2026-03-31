@@ -1,0 +1,12 @@
+{
+  "call_id": "nc:IncidentID",
+  "call_date": "nc:ActivityDate",
+  "dispatch_time": "nc:ActivityTime",
+  "dispatch_address": "nc:Location.nc:Address",
+  "city": "nc:Location.nc:City",
+  "state_code": "nc:Location.nc:State",
+  "call_type": "em:IncidentCategoryCode",
+  "responding_units": "nc:SystemUnit",
+  "num_patients": "nc:Casualties.nc:Injuries",
+  "description": "nc:ActivityDescription"
+}

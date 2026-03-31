@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "nc:IncidentID",
+    "nc:ActivityDate",
+    "nc:ActivityTime",
+    "nc:Location",
+    "em:IncidentCategoryCode",
+    "em:UnitsDispatched",
+    "nc:Casualties",
+    "em:PropertyDamageSeverity",
+    "nc:Narrative"
+  ],
+  "properties": {
+    "nc:IncidentID": {
+      "type": "string",
+      "minLength": 3
+    },
+    "nc:ActivityDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "nc:ActivityTime": {
+      "type": "string",
+      "pattern": "^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$"
+    },
+    "nc:Location": {
+      "type": "object",
+      "required": ["nc:Address", "nc:City", "nc:State"],
+      "properties": {
+        "nc:Address": {"type": "string"},
+        "nc:City": {"type": "string"},
+        "nc:State": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "em:IncidentCategoryCode": {
+      "type": "string",
+      "enum": ["Fire", "Medical", "Hazmat", "Other", "STRUCTURE_FIRE", "VEHICLE_FIRE", "WILDFIRE", "MEDICAL", "HAZMAT"]
+    },
+    "em:UnitsDispatched": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "nc:Casualties": {
+      "type": "object",
+      "required": ["nc:Injuries", "nc:Fatalities"],
+      "properties": {
+        "nc:Injuries": {"type": "integer", "minimum": 0},
+        "nc:Fatalities": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "em:PropertyDamageSeverity": {
+      "type": "string"
+    },
+    "nc:Narrative": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,14 @@
+{
+  "incident_id": "nc:IncidentID",
+  "incident_date": "nc:ActivityDate",
+  "incident_time": "nc:ActivityTime",
+  "incident_location": "nc:Location.nc:Address",
+  "incident_city": "nc:Location.nc:City",
+  "incident_state": "nc:Location.nc:State",
+  "incident_type": "em:IncidentCategoryCode",
+  "units_dispatched": "nc:SystemUnit",
+  "injuries": "nc:Casualties.nc:Injuries",
+  "fatalities": "nc:Casualties.nc:Fatalities",
+  "property_damage": "nc:PropertyDamage",
+  "narrative": "nc:ActivityDescription"
+}

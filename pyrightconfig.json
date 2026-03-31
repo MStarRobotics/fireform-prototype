@@ -1,0 +1,11 @@
+{
+  "include": ["fireform", "tests", "app"],
+  "reportMissingImports": "none",
+  "executionEnvironments": [
+    {
+      "root": ".",
+      "extraPaths": ["."]
+    }
+  ],
+  "reportMissingTypeStubs": "none"
+}

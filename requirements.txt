@@ -1,0 +1,13 @@
+faster-whisper
+jsonschema
+ollama
+pypdf
+pytest
+pytest-mock
+ruff
+streamlit
+typer
+rich
+noisereduce
+soundfile
+httpx

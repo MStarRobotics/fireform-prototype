@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fireform-prototype"
+version = "0.1.0"
+description = "Advanced local FireForm prototype for UN OICT GSoC"
+requires-python = ">=3.11"
+readme = "README.md"
+authors = [{ name = "MStarRobotics" }]
+license = { text = "MIT" }
+dependencies = [
+  "faster-whisper",
+  "jsonschema",
+  "ollama",
+  "pypdf",
+  "streamlit", "typer", "rich", "noisereduce", "soundfile", "httpx"
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-mock", "ruff", "pyright"]
+
+[project.scripts]
+fireform = "fireform.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["fireform*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
